@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label "Jenkins-slave1"
+        label "agent-2"
     }
     environment {
         APP_NAME = "complete-prodcution-e2e-pipeline"
@@ -35,13 +35,13 @@ pipeline {
         stage("Push the changed deployment file to Git") {
             steps {
                 sh """
-                    git config --global user.name "ajoke93"
+                    git config --global user.name "Ajoke93"
                     git config --global user.email "ajokecloud@gmail.com"
                     git add deployment.yaml
                     git commit -m "Updated Deployment Manifest"
                 """
                 withCredentials([gitUsernamePassword(credentialsId: 'Github-Cred-New', gitToolName: 'Default')]) {
-                    sh "git push https://github.com/ajoke93/gitops-complete-prodcution-e2e-pipeline main"
+                    sh "git push https://github.com/Ajoke93/gitops-complete-prodcution-e2e-pipeline.git main"
                 }
             }
         }
