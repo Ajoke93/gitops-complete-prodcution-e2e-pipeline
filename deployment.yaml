@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: complete-prodcution-e2e-app
-          image: ajoke93/complete-prodcution-e2e-pipeline:
+          image: ajoke93/complete-prodcution-e2e-pipeline:1.0.0-153
           resources:
             limits:
               memory: "256Mi"
